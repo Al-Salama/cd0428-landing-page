@@ -101,11 +101,11 @@ section {
 .navbar__menu li.nav-active a::after{
     content: '';
     position: absolute;
-    bottom: 15%;
+    bottom: 20%;
     left: 50%;
     translate: -50% 50%;
-    width: 75%;
-    height: 2px;
+    width: 50%;
+    height: 3px;
     background-color: rgba(0,13,60,1);
     border-radius: 2px;
 }
