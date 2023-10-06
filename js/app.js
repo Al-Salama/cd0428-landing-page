@@ -41,6 +41,7 @@ function storeSectionsData() {
     data.push({
       id: secElm.id,
       navName: secElm.dataset.nav,
+      isActive: secElm.classList.contains("sec-active")
     });
   }
 
@@ -69,6 +70,8 @@ function buildNav() {
     // I added this data on top of the href because i want to use
     // .getElementById without using string manipulations.
     navAnchor.dataset.scrollTo = sec.id;
+
+    if (sec.isActive) navLi.classList.add("nav-active");
 
     navLi.appendChild(navAnchor);
     fragment.appendChild(navLi);
