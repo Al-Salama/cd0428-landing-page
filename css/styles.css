@@ -23,7 +23,13 @@ body {
 h1 {
     font-family: 'Fira Sans', sans-serif;
     font-size: 3em;
-    margin: 2em 1rem;
+    margin: 3.5em 1rem 2em;
+}
+
+@media only screen and (min-width: 500px){
+    h1 {
+        margin: 2em 1rem 2em;
+    }
 }
 
 @media only screen and (min-width: 35em){
@@ -32,6 +38,7 @@ h1 {
         margin: 2em 4rem 1em;
     }
 }
+
 
 h2 {
     border-bottom: 1px solid #cc1;
@@ -68,37 +75,18 @@ section {
     margin: 0;
     text-align: left;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 0.75rem;
     padding-top: 0.5rem;
-    padding-right: 0;
+    padding-inline: 1rem;
 }
 
 .navbar__menu li {
     display: inline-block;
 }
 
-.navbar__menu li a{
-    position: relative;
-    display: block;
-    padding: 1rem 1rem;
-    transition: ease 0.3s background-color;
-    text-decoration: none;
-    color: rgba(0,13,60,1);
-    border-radius: 8px 8px 0 0;
-}
-
-.navbar__menu li a:hover{
-    background-color: rgba(0,13,60,1);
-    color: rgba(136,203,171,1);
-}
-
-.navbar__menu li.nav-active a{
-    background-color: rgba(136,203,171,1);
-    color: rgba(0,13,60,1);
-    box-shadow: 0px -1px 4px 0px rgba(0,13,60,0.6);
-}
-
-.navbar__menu li.nav-active a::after{
+.navbar__menu li.item-active a::after{
     content: '';
     position: absolute;
     bottom: 20%;
@@ -111,17 +99,26 @@ section {
 }
 
 .navbar__menu .menu__link {
+    position: relative;
     display: block;
-    padding: 1em;
+    padding: 1rem 1rem;
     font-weight: bold;
+    transition: ease 0.3s background-color;
     text-decoration: none;
-    color: #000;
+    color: rgba(0,13,60,1);
+    border-radius: 8px 8px 0 0;
 }
 
-.navbar__menu .menu__link:hover {
-    background: #333;
-    color: #fff;
-    transition: ease 0.3s all;
+.navbar__menu .menu__link:hover,
+.navbar__menu .menu__link:active {
+    background-color: rgba(0,13,60,1);
+    color: rgba(136,203,171,1);
+}
+
+.navbar__menu li.item-active .menu__link{
+    background-color: rgba(136,203,171,1);
+    color: rgba(0,13,60,1);
+    box-shadow: 0px -1px 4px 0px rgba(0,13,60,0.6);
 }
 
 /* Header Styles */
